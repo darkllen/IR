@@ -1,0 +1,6 @@
+ipynb
+ipykernel
+nltk
+tqdm
+pydantic
+beautifulsoup4
