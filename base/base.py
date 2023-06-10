@@ -62,8 +62,8 @@ class BaseProcesser(ABC):
                     self._process_word(doc, word)
 
                 self._after_file_action(doc)
-            except Exception:
-                print('Error')
+            except Exception as e:
+                print('Error', e)
         self._after_collection_action(files_pathes)
 
     def _process_word(self, doc: Document, word: str):

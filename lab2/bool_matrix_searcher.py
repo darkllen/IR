@@ -1,5 +1,5 @@
 from base.serializer import BaseSerializer
-from lab2.bool_ops import WordOp, AndOp, OrOp, NotOp, ZeroOp
+from base.bool_ops import WordOp, AndOp, OrOp, NotOp, ZeroOp
 
 class BoolSearcherMatrix():
     def __init__(self, serializer:BaseSerializer , matrix_file: str, words_file: str):
@@ -32,7 +32,7 @@ class BoolSearcherMatrix():
         if word.__class__.__name__ == OrOp.__name__:
             ind1 = self.search_helper(word.word1)
             ind2 = self.search_helper(word.word2)
-            return ind1 or ind2
+            return list(map(lambda vals: 1 if vals[0] or vals[1] else 0, zip(ind1, ind2)))
 
         if word.__class__.__name__ == NotOp.__name__:
             ind1 = self.search_helper(word.word1)

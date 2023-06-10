@@ -1,5 +1,5 @@
 from base.serializer import BaseSerializer
-from lab2.bool_ops import WordOp, AndOp, OrOp, NotOp, ZeroOp
+from base.bool_ops import WordOp, AndOp, OrOp, NotOp, ZeroOp
 
 class BoolSearcherInvert():
     def __init__(self, serializer:BaseSerializer ,invert_index_file: str, doc_ids: set):

@@ -17,6 +17,3 @@ class InvertProcessor(BaseProcesser):
     def _after_collection_action(self, files_pathes: List[str]):
         self._serializer.serialize(self._invert_index, '../res/invert.json')
         print('res_size_mb: ', os.stat('../res/invert.json').st_size / (1024 * 1024))
-
-    def _before_file_action(self, doc: Document):
-        ...
